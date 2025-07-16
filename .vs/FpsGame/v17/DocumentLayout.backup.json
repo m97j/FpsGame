@@ -1,0 +1,215 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\minja\\FpsGame\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{50AC48BD-9BB8-B4EF-1D51-952244BD3F8F}|Assembly-CSharp.csproj|c:\\users\\minja\\fpsgame\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
+      "RelativeMoniker": "D:0:0:{50AC48BD-9BB8-B4EF-1D51-952244BD3F8F}|Assembly-CSharp.csproj|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50AC48BD-9BB8-B4EF-1D51-952244BD3F8F}|Assembly-CSharp.csproj|c:\\users\\minja\\fpsgame\\assets\\scripts\\loginmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{50AC48BD-9BB8-B4EF-1D51-952244BD3F8F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\loginmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50AC48BD-9BB8-B4EF-1D51-952244BD3F8F}|Assembly-CSharp.csproj|c:\\users\\minja\\fpsgame\\assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{50AC48BD-9BB8-B4EF-1D51-952244BD3F8F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gamemanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50AC48BD-9BB8-B4EF-1D51-952244BD3F8F}|Assembly-CSharp.csproj|C:\\Users\\minja\\FpsGame\\assets\\scripts\\camrotate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{50AC48BD-9BB8-B4EF-1D51-952244BD3F8F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\camrotate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50AC48BD-9BB8-B4EF-1D51-952244BD3F8F}|Assembly-CSharp.csproj|C:\\Users\\minja\\FpsGame\\assets\\scripts\\bombaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{50AC48BD-9BB8-B4EF-1D51-952244BD3F8F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\bombaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50AC48BD-9BB8-B4EF-1D51-952244BD3F8F}|Assembly-CSharp.csproj|C:\\Users\\minja\\FpsGame\\assets\\scripts\\enemyfsm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{50AC48BD-9BB8-B4EF-1D51-952244BD3F8F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemyfsm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50AC48BD-9BB8-B4EF-1D51-952244BD3F8F}|Assembly-CSharp.csproj|C:\\Users\\minja\\FpsGame\\assets\\scripts\\playerfire.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{50AC48BD-9BB8-B4EF-1D51-952244BD3F8F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playerfire.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50AC48BD-9BB8-B4EF-1D51-952244BD3F8F}|Assembly-CSharp.csproj|C:\\Users\\minja\\FpsGame\\assets\\easy fps\\scripts\\destroyaftertimeparticle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{50AC48BD-9BB8-B4EF-1D51-952244BD3F8F}|Assembly-CSharp.csproj|solutionrelative:assets\\easy fps\\scripts\\destroyaftertimeparticle.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50AC48BD-9BB8-B4EF-1D51-952244BD3F8F}|Assembly-CSharp.csproj|C:\\Users\\minja\\FpsGame\\assets\\scripts\\hitevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{50AC48BD-9BB8-B4EF-1D51-952244BD3F8F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\hitevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50AC48BD-9BB8-B4EF-1D51-952244BD3F8F}|Assembly-CSharp.csproj|C:\\Users\\minja\\FpsGame\\assets\\scripts\\camfollow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{50AC48BD-9BB8-B4EF-1D51-952244BD3F8F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\camfollow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50AC48BD-9BB8-B4EF-1D51-952244BD3F8F}|Assembly-CSharp.csproj|C:\\Users\\minja\\FpsGame\\assets\\scripts\\playerrotate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{50AC48BD-9BB8-B4EF-1D51-952244BD3F8F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playerrotate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{50AC48BD-9BB8-B4EF-1D51-952244BD3F8F}|Assembly-CSharp.csproj|C:\\Users\\minja\\FpsGame\\assets\\scripts\\playermove.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{50AC48BD-9BB8-B4EF-1D51-952244BD3F8F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playermove.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": ".gitignore",
+              "DocumentMoniker": "C:\\Users\\minja\\FpsGame\\.gitignore",
+              "RelativeDocumentMoniker": ".gitignore",
+              "ToolTip": "C:\\Users\\minja\\FpsGame\\.gitignore",
+              "RelativeToolTip": ".gitignore",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-07-15T15:00:49.331Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "LoginManager.cs",
+              "DocumentMoniker": "C:\\Users\\minja\\FpsGame\\Assets\\Scripts\\LoginManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\LoginManager.cs",
+              "ToolTip": "C:\\Users\\minja\\FpsGame\\Assets\\Scripts\\LoginManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\LoginManager.cs",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAIwHEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-15T14:25:39.266Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GameManager.cs",
+              "DocumentMoniker": "C:\\Users\\minja\\FpsGame\\Assets\\Scripts\\GameManager.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\GameManager.cs",
+              "ToolTip": "C:\\Users\\minja\\FpsGame\\Assets\\Scripts\\GameManager.cs",
+              "RelativeToolTip": "Assets\\Scripts\\GameManager.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAkwB4AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-14T14:09:03.933Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "BombAction.cs",
+              "DocumentMoniker": "C:\\Users\\minja\\FpsGame\\Assets\\Scripts\\BombAction.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\BombAction.cs",
+              "ToolTip": "C:\\Users\\minja\\FpsGame\\Assets\\Scripts\\BombAction.cs",
+              "RelativeToolTip": "Assets\\Scripts\\BombAction.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABoAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-14T09:11:11.156Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "DestroyAfterTimeParticle.cs",
+              "DocumentMoniker": "C:\\Users\\minja\\FpsGame\\Assets\\Easy FPS\\Scripts\\DestroyAfterTimeParticle.cs",
+              "RelativeDocumentMoniker": "Assets\\Easy FPS\\Scripts\\DestroyAfterTimeParticle.cs",
+              "ToolTip": "C:\\Users\\minja\\FpsGame\\Assets\\Easy FPS\\Scripts\\DestroyAfterTimeParticle.cs",
+              "RelativeToolTip": "Assets\\Easy FPS\\Scripts\\DestroyAfterTimeParticle.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-12T16:16:34.599Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "PlayerFire.cs",
+              "DocumentMoniker": "C:\\Users\\minja\\FpsGame\\Assets\\Scripts\\PlayerFire.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerFire.cs",
+              "ToolTip": "C:\\Users\\minja\\FpsGame\\Assets\\Scripts\\PlayerFire.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PlayerFire.cs",
+              "ViewState": "AgIAAHoAAAAAAAAAAAAgwGcAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-11T00:30:42.591Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "CamFollow.cs",
+              "DocumentMoniker": "C:\\Users\\minja\\FpsGame\\Assets\\Scripts\\CamFollow.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\CamFollow.cs",
+              "ToolTip": "C:\\Users\\minja\\FpsGame\\Assets\\Scripts\\CamFollow.cs",
+              "RelativeToolTip": "Assets\\Scripts\\CamFollow.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-07T07:46:10.813Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CamRotate.cs",
+              "DocumentMoniker": "C:\\Users\\minja\\FpsGame\\Assets\\Scripts\\CamRotate.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\CamRotate.cs",
+              "ToolTip": "C:\\Users\\minja\\FpsGame\\Assets\\Scripts\\CamRotate.cs",
+              "RelativeToolTip": "Assets\\Scripts\\CamRotate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-07T07:16:36.729Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "PlayerRotate.cs",
+              "DocumentMoniker": "C:\\Users\\minja\\FpsGame\\Assets\\Scripts\\PlayerRotate.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerRotate.cs",
+              "ToolTip": "C:\\Users\\minja\\FpsGame\\Assets\\Scripts\\PlayerRotate.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PlayerRotate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-07T06:41:45.827Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "PlayerMove.cs",
+              "DocumentMoniker": "C:\\Users\\minja\\FpsGame\\Assets\\Scripts\\PlayerMove.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerMove.cs",
+              "ToolTip": "C:\\Users\\minja\\FpsGame\\Assets\\Scripts\\PlayerMove.cs",
+              "RelativeToolTip": "Assets\\Scripts\\PlayerMove.cs",
+              "ViewState": "AgIAAD8AAAAAAAAAAAAowFYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-07T06:41:42.541Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "EnemyFSM.cs",
+              "DocumentMoniker": "C:\\Users\\minja\\FpsGame\\Assets\\Scripts\\EnemyFSM.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\EnemyFSM.cs",
+              "ToolTip": "C:\\Users\\minja\\FpsGame\\Assets\\Scripts\\EnemyFSM.cs",
+              "RelativeToolTip": "Assets\\Scripts\\EnemyFSM.cs",
+              "ViewState": "AgIAAKcAAAAAAAAAAAAiwLQAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-05T17:15:47.893Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "HitEvent.cs",
+              "DocumentMoniker": "C:\\Users\\minja\\FpsGame\\Assets\\Scripts\\HitEvent.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\HitEvent.cs",
+              "ToolTip": "C:\\Users\\minja\\FpsGame\\Assets\\Scripts\\HitEvent.cs",
+              "RelativeToolTip": "Assets\\Scripts\\HitEvent.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-11T00:15:13.245Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
