@@ -10,7 +10,7 @@ public class LoginManager : MonoBehaviour
     public InputField password;
     public Text notify;
 
-    private const string serverUrl = "https://your-backend.render.com/api";
+    private const string serverUrl = "https://fpsgame-rrbc.onrender.com/api";
 
     void Start()
     {
