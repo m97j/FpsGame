@@ -1,0 +1,28 @@
+# ----------------------------------------
+# 1. 기본적으로 전부 무시
+*
+*/**
+!*/             # 폴더 구조는 유지
+# ----------------------------------------
+
+# 2. 루트에서 허용할 항목들
+!.gitignore
+!README.md
+
+# 3. frontend - scripts만 허용
+!frontend/
+!frontend/assets/
+!frontend/assets/scripts/
+!frontend/assets/scripts/**
+
+# 4. backend - 선택적 파일만 허용
+!backend/
+!backend/app.js
+!backend/package.json
+!backend/package-lock.json
+!backend/controllers/
+!backend/controllers/**
+!backend/models/
+!backend/models/**
+!backend/routes/
+!backend/routes/**
