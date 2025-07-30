@@ -1,37 +1,21 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class CamRotate : MonoBehaviour
 {
-    public float rotSpeed = 200f;
-    float mx = 0;
-    float my = 0;
+    [SerializeField] private float sensitivity = 5f;
+    [SerializeField] private float maxAngle = 80f;
+    [SerializeField] private float minAngle = -80f;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private float xRotation = 0f;
 
-    // Update is called once per frame
     void Update()
     {
-        if(GameManager.gm.gState != GameManager.GameState.Run)
-        {
-            return;
-        }
+        float mouseY = Input.GetAxis("Mouse Y") * sensitivity;
+        float rotationAmount = -mouseY;
 
-        float mouse_X = Input.GetAxis("Mouse X");
-        float mouse_Y = Input.GetAxis("Mouse Y");
-        Debug.Log("Mouse Y: " + mouse_Y);
+        xRotation += rotationAmount;
+        xRotation = Mathf.Clamp(xRotation, minAngle, maxAngle);
 
-
-        mx += mouse_X * rotSpeed + Time.deltaTime;
-        my += mouse_Y * rotSpeed * Time.deltaTime;
-
-        my = Mathf.Clamp(my, -90f, 90f);
-
-        transform.eulerAngles = new Vector3(-my, mx, 0);    
+        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
     }
 }
