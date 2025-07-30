@@ -9,7 +9,7 @@ public class PlayerMove : MonoBehaviour
     CharacterController cc;
     float gravity = -20f;
     public float yVelocity = 0;
-    public float jumpPower = 10f;
+    public float jumpPower = 1f;
     public bool isJumping = false;
     public int hp = 20;
     int maxHp = 20;

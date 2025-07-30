@@ -43,7 +43,7 @@ public class LoginManager : MonoBehaviour
                 var response = JsonUtility.FromJson<ServerResponse>(request.downloadHandler.text);
                 if (response.success)
                 {
-                    SceneManager.LoadScene("MainScene"); // 메인 씬 이름으로 전환
+                    SceneManager.LoadScene("LobbyScene"); // 메인 씬 이름으로 전환
                 }
                 else
                 {

@@ -1,29 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerRotate : MonoBehaviour
 {
-    public float rotSpeed = 200f;
-    float mx = 0;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [SerializeField] private float sensitivity = 5f;
+    private float yRotation = 0f;
 
-    // Update is called once per frame
     void Update()
     {
-        if(GameManager.gm.gState != GameManager.GameState.Run)
-        {
-            return;
-        }
-
-        float mouse_X = Input.GetAxis("Mouse X");
-
-        mx += mouse_X * rotSpeed * Time.deltaTime;
-
-        transform.eulerAngles = new Vector3(0, mx, 0);
+        float mouseX = Input.GetAxis("Mouse X") * sensitivity;
+        transform.Rotate(Vector3.up, mouseX); // 제자리에서 Y축 기준 회전
     }
 }
