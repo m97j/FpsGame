@@ -62,7 +62,6 @@ feature/~~~ → 기능 개발
 ---
 
 #### ✅ 게임 씬
-- 첨부한 스크린샷 기반:  
   - 전체 배경은 **산업형 컨테이너 지형 / 창고 환경으로 구성**  
   - Hierarchy상에는 Player, MainCamera, GameManager, Enemy(Zombie1), UI(Canvas), Map 등이 배치됨  
   - **Player 이동 / 회전 로직 개선:**  
