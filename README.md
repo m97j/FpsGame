@@ -1,18 +1,18 @@
----
 
 ## 🕹️ FpsGame – Unity 기반 FPS 프로젝트 (Beta)
 
 ## 📌 프로젝트 개요
 
-Unity 기반의 FPS 게임으로, 플레이어가 다양한 무기와 스킬을 활용해 적을 처치하는 3D 액션 게임입니다.  
-**모듈화된 디렉토리 구조와 GitFlow 전략**을 통해 구조적 확장성과 협업 효율성을 고려하여 설계되었습니다.  
-클라이언트와 백엔드를 명확히 분리하고, 실제 환경에서의 역할 구분과 API 연동을 염두에 두었습니다.
+> Unity 기반 1인칭 슈팅 게임 프로젝트  
+> 단순한 FPS 구조에서 나아가 **스토리 중심 RPG 요소**, **AI 기반 NPC 대화 시스템**, **서버 기반 진행 저장/복구** 기능을 포함한 확장형 게임 아키텍처를 연구 및 개발하고 있습니다.
+> **모듈화된 디렉토리 구조와 GitFlow 전략**을 통해 구조적 확장성과 협업 효율성을 고려하여 설계되었습니다.  
+> 클라이언트와 서버를 명확히 분리하고, 실제 환경에서의 역할 구분과 API 연동을 염두에 두었습니다.
 
 ## 🎯 개발 목적 및 기획 의도
 
 본 프로젝트는 FPS 장르의 기본기를 익히는 동시에,  
-**MMORPG 요소를 접목한 확장형 게임 시스템**을 기획하고 있습니다.  
-특히 RPG 핵심 요소인 *아이템 강화, 상점 시스템, 계정 기반 성장 구조* 등을 FPS에 적용하는 방향으로 발전시키고자 합니다.
+**MMORPG 요소를 접목한 확장형 게임 시스템**을 기획하고 있습니다.
+특히 RPG 핵심 요소인 *npc및 스토리, 아이템 강화, 상점 시스템, 계정 기반 성장 구조* 등을 현재 게임에 적용하는 방향으로 발전시키고자 합니다.
 
 ## 🎥 [시연 영상](https://youtu.be/98fkWuGhLA0)
 
@@ -25,7 +25,7 @@ FpsGame/
 │       └── Scripts/  # Player, Weapon, Enemy 등 게임 로직
 └── backend/          # Node.js 기반 API 서버
     ├── controllers/
-    ├── models/
+    ├── models/   (Player.js, NPCState.js, Quest.js, DialogueLog.js, ...)
     ├── routes/
     └── app.js
 ```
@@ -86,6 +86,80 @@ feature/~~~ → 기능 개발
 
 ---
 
+## ✨ 추가될 내용 (v0.2-beta)
+
+### 🎭 NPC 상호작용
+- 단순 대사 스크립트 기반이 아닌 **AI 엔진(persona-chat-engine 연동)** 을 통한 자연어 대화
+- 플레이어 신뢰도 / NPC 관계도 / 퀘스트 진행 상황에 따라 **동적으로 변화하는 대사**
+- 특정 조건 달성 시 **게임 환경 변경(플래그/델타값 적용)**
+
+### 🌐 서버 통신
+- **game-server(Node.js, Express)** 와 연결하여 다음을 처리:
+  - 로그인 및 세션 관리
+  - NPC 상태 / 플레이어 진행 상황 실시간 업데이트
+  - AI-server와의 중계 역할 수행
+- 클라이언트(UI/씬)는 **server API 호출**을 통해 대사/퀘스트/환경변화를 동기화
+
+### 🧠 AI 기능 (persona-chat-engine)
+- 대화 입력을 **ai-server(FastAPI)** 로 전달 후,  
+  Hugging Face Spaces에 올린 **fine-tuned 모델(hf-serve)** 과 연동
+- 대화 맥락 + NPC 성격을 기반으로 한 응답 생성
+- AI가 반환한 결과를 **game-server** 에서 처리 →  
+  `trust`, `questStage`, `flags` 등의 상태값에 반영 후 Unity UI에 반영
+
+### 💾 자동 저장
+- 15분마다 / 로딩 화면 / 게임 종료 시 진행 상태를 자동 저장
+- MongoDB 기반의 `Player`, `NPCState`, `Quest`, `DialogueLog` 스키마 활용
+- 이후 접속 시 **이어하기(continue play)** 지원
+
+---
+
+## 🏗️ 아키텍처 개요
+
+```mermaid
+flowchart LR
+  Client[Unity Client] --REST--> GameServer[Node.js Game Server]
+  GameServer --RPC--> AiServer[FastAPI AI-Server]
+  AiServer --API--> HFServe[Hugging Face Model]
+  GameServer --> MongoDB[(Game DB)]
+  GameServer --> Redis[(Cache)]
+````
+
+* **Unity Client**
+
+  * `NPCDialogueManager.cs`: 대화 입력/출력
+  * `SessionSaveManager.cs`: 세이브/로드 트리거
+  * **ScriptableObject** 를 사용해 NPC 데이터/Quest 상태를 모듈화하여 관리
+
+* **Game Server (Node.js)**
+
+  * `models/` : Player, NPCState, Quest, DialogueLog, Inventory 등 저장 스키마
+  * `controllers/` : Dialogue/Event/Quest 처리
+  * `services/` : AI 호출, 저장관리, 이벤트 처리
+
+* **AI Server (persona-chat-engine)**
+
+  * 입력 prompt 구성 + 후처리 → Hugging Face 모델 호출
+
+---
+
+## 📌 기술 포인트
+
+* **Unity 아키텍처**
+
+  * ScriptableObject 기반 NPC 데이터 관리 (상태/대사 분리)
+  * OOP 구조 → 이벤트 기반 설계 (Dialogue/Quest 트리거)
+  * `NPCDialogueManager`와 `SessionSaveManager`를 통한 **클라이언트-서버 동기화**
+
+* **서버 아키텍처**
+
+  * RESTful API 기반 구조
+  * MongoDB로 상태 저장 (장기적 진행 관리)
+  * Redis 캐시를 활용한 단기 메모리 최적화
+  * **AI-server → hf-serve 모델 연동**을 통한 분리형 구조
+
+---
+
 ## 📦 릴리즈 정보
 
 최초 베타 릴리즈가 완료되었습니다!  
@@ -102,12 +176,13 @@ feature/~~~ → 기능 개발
 ## 🔭 향후 개발 계획 (v1.x >)
 
 - 🗺️ **다중 맵 시스템**: ~~로비에서 맵 선택 가능~~[구현 완료], 맵별 무기 드롭 테이블 설정
-- 🛒 **상점 시스템**: 로비 상점 및 게임 내 히든 상점 구현, 아이템 구매/판매 기능
+- 🛒 **상점 시스템**: 로비 상점 및 게임 내 히든 상점 구현, 아이템 구매/판매 기능 (Inventory/Item DB와 연동)
 - 🎲 **랜덤 아이템 등장**: 상점마다 판매 아이템이 매 게임마다 랜덤 결정
 - 💎 **아이템 강화 시스템**: 무기/방어구 강화, 등급별 능력치 적용
 - 📦 **계정 기반 저장**: 플레이어의 인벤토리, 재화, 강화 상태를 백엔드에 저장
-- 🧠 **히든 요소**: 특정 조건 만족 시 등장하는 상점/무기 등 탐색 요소 추가
-- 🌐 **멀티플레이 모드**: 로컬 및 네트워크 기반 2인 플레이 지원
+- 🎭 **npc 기반 스토리 추가**: ai기반 npc대사 동적 생성 (RAG 기반 NPC 지식 확장 (persona-chat-engine RAG 모듈 활용))
+- 🧠 **히든 요소**: 특정 조건 만족 시 등장하는 공간/장비/엔딩루트 등 탐색 요소 추가
+- 🌐 **멀티플레이 모드**: 로컬 및 네트워크 기반 2인 플레이 지원 (Game-server에서 세션 관리 확장)
 - 📱 **모바일 대응 UI**: 터치 및 컨트롤러 입력 대응
 
 ## ⚙️ 기술 스택
@@ -142,3 +217,7 @@ feature/~~~ → 기능 개발
 새로운 기능 구현이나 협업에 관심 있는 분들의 PR도 언제든 환영합니다!
 
 ---
+
+
+
+
