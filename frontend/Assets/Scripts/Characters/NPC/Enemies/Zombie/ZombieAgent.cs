@@ -3,23 +3,23 @@ using UnityEngine;
 [RequireComponent(typeof(ZombieController))]
 [RequireComponent(typeof(ZombieFSM))]
 [RequireComponent(typeof(BehaviorTree))]
-public class ZombieAgent : MonoBehaviour
+[RequireComponent(typeof(PerceptionSystem))]
+public class ZombieAgent : BTAgent   // BTAgent 상속
 {
     private ZombieController controller;
     private ZombieFSM fsm;
-    private BehaviorTree bt;
+    private PerceptionSystem perception;
     private Blackboard blackboard;
 
-    void Awake()
+    public override void Initialize()
     {
         controller = GetComponent<ZombieController>();
         fsm = GetComponent<ZombieFSM>();
-        bt = GetComponent<BehaviorTree>();
+        perception = GetComponent<PerceptionSystem>();
         blackboard = new Blackboard();
 
         // === BT 트리 구성 ===
-        // 루트: Selector (조건에 맞는 행동을 선택)
-        BTNode root = new Selector(
+        root = new Selector(
             // 1. 사망 조건
             new Sequence(
                 new ConditionNode(() =>
@@ -56,11 +56,11 @@ public class ZombieAgent : MonoBehaviour
                     return BTNode.State.Success;
                 })
             ),
-            // 4. 플레이어 탐지됨 → 추적
+            // 4. 플레이어 탐지됨 → 추적 (PerceptionSystem 활용)
             new Sequence(
                 new ConditionNode(() =>
                 {
-                    return controller.IsPlayerDetected() ? BTNode.State.Success : BTNode.State.Failure;
+                    return perception.HasTarget() ? BTNode.State.Success : BTNode.State.Failure;
                 }),
                 new ActionNode(() =>
                 {
@@ -75,7 +75,20 @@ public class ZombieAgent : MonoBehaviour
                 return BTNode.State.Success;
             })
         );
+    }
 
-        bt.SetRoot(root);
+    void Awake()
+    {
+        Initialize();
+    }
+
+    void Update()
+    {
+        // Perception 결과를 Blackboard에 기록
+        blackboard.Set("HasTarget", perception.HasTarget());
+        blackboard.Set("Target", perception.detectedTarget);
+
+        // BT 실행
+        Tick();
     }
 }
