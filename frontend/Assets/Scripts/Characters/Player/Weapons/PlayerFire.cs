@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -25,14 +24,11 @@ public class PlayerFire : MonoBehaviour
     }
 
     WeaponMode wMode;
-
     bool ZoomMode = false;
 
     public Text weaponModeText;
-
     public GameObject[] eff_Flash;
 
-    // Start is called before the first frame update
     void Start()
     {
         ps = bulletEffect.GetComponent<ParticleSystem>();
@@ -40,23 +36,22 @@ public class PlayerFire : MonoBehaviour
         wMode = WeaponMode.Normal;
     }
 
-    // Update is called once per frame
     void Update()
     {
         if (GameManager.gm.gState != GameManager.GameState.Run)
-        {
             return;
-        }
 
+        // 우클릭 (보조 무기/줌)
         if (Input.GetMouseButtonDown(1))
         {
-            switch(wMode)
+            switch (wMode)
             {
                 case WeaponMode.Normal:
-                    GameObject bomb = Instantiate(bombFactory);
+                    // Simplified 'new' expressions to address IDE0090 diagnostic code
+                    var bomb = Instantiate(bombFactory);
                     bomb.transform.position = firePosition.transform.position;
 
-                    Rigidbody rb = bomb.GetComponent<Rigidbody>();
+                    var rb = bomb.GetComponent<Rigidbody>();
                     rb.AddForce(Camera.main.transform.forward * throwPower, ForceMode.Impulse);
                     break;
 
@@ -75,32 +70,32 @@ public class PlayerFire : MonoBehaviour
             }
         }
 
+        // 좌클릭 (공격)
         if (Input.GetMouseButtonDown(0))
         {
             if (anim.GetFloat("MoveMotion") == 0)
-            {
                 anim.SetTrigger("Attack");
-            }
-            Ray ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
-            RaycastHit hitinfo = new RaycastHit();
-            if(Physics.Raycast(ray, out hitinfo))
+
+            var ray = new Ray(Camera.main.transform.position, Camera.main.transform.forward);
+            if (Physics.Raycast(ray, out var hitinfo))
             {
-                if(hitinfo.transform.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+                // === B 방식 적용 부분 ===
+                if (hitinfo.transform.TryGetComponent<IDamageable>(out var target))
                 {
-                    EnemyFSM eFSM = hitinfo.transform.GetComponent<EnemyFSM>();
-                    eFSM.HitEnemy(weaponPower);
+                    target.TakeDamage(weaponPower);
                 }
                 else
                 {
+                    // 피격 이펙트 처리
                     bulletEffect.transform.position = hitinfo.point;
                     bulletEffect.transform.forward = hitinfo.normal;
-
                     ps.Play();
                 }
             }
             StartCoroutine(ShootEffectOn(0.05f));
         }
 
+        // 무기 모드 전환
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             wMode = WeaponMode.Normal;
@@ -132,7 +127,6 @@ public class PlayerFire : MonoBehaviour
         //    wMode = WeaponMode.Laser;
         //    Debug.Log("무기 모드: Laser");
         //}
-        
     }
 
     IEnumerator ShootEffectOn(float duration)

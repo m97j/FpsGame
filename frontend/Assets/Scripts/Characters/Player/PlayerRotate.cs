@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerRotate : MonoBehaviour
 {
     [SerializeField] private float sensitivity = 5f;
-    private float yRotation = 0f;
+    //private float yRotation = 0f;
 
     void Update()
     {
