@@ -1,18 +1,17 @@
 using UnityEngine;
 
-public class ZombieFSM : MonoBehaviour
+public class ZombieFSM : FSMAgent
 {
-    private StateMachine stateMachine;
     private Animator anim;
     private ZombieController controller;
 
-    void Awake()
+    public override void Initialize()
     {
-        stateMachine = new StateMachine();
+        base.Initialize(); // stateMachine 초기화
+
         anim = GetComponentInChildren<Animator>();
         controller = GetComponent<ZombieController>();
 
-        // 상태 등록
         stateMachine.AddState(new ZombieIdleState(anim, controller, stateMachine));
         stateMachine.AddState(new ZombieMoveState(anim, controller, stateMachine));
         stateMachine.AddState(new ZombieAttackState(anim, controller, stateMachine));
@@ -26,8 +25,13 @@ public class ZombieFSM : MonoBehaviour
         stateMachine.ChangeState<T>();
     }
 
+    void Awake()
+    {
+        Initialize();
+    }
+
     void Update()
     {
-        stateMachine.Tick();
+        Tick(); // FSMAgent.Tick() → stateMachine.Tick()
     }
 }
