@@ -17,9 +17,15 @@ public class ZombieAttackState : IState
 
     public void Tick()
     {
-        controller.AttackPlayer();
+        // 공격 실행 (여기서는 기본적으로 경공격 사용)
+        // 필요하다면 랜덤으로 Light/Heavy 선택 가능
+        if (Random.value < 0.7f)
+            controller.AttackLight();
+        else
+            controller.AttackHeavy();
 
-        if (!controller.IsPlayerInAttackRange())
+        // 공격 범위 벗어나면 이동 상태로 전환
+        if (!controller.IsTargetInAttackRange())
             sm.ChangeState<ZombieMoveState>();
     }
 

@@ -48,7 +48,7 @@ public class ZombieAgent : BTAgent   // BTAgent »ó¼Ó
             new Sequence(
                 new ConditionNode(() =>
                 {
-                    return controller.IsPlayerInAttackRange() ? BTNode.State.Success : BTNode.State.Failure;
+                    return controller.IsTargetInAttackRange() ? BTNode.State.Success : BTNode.State.Failure;
                 }),
                 new ActionNode(() =>
                 {
