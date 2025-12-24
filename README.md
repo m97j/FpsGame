@@ -18,14 +18,15 @@ This is a Unity-based first-person shooter (FPS) game project.
 ## 📁 Directory Structure
 ```
 FpsGame/
-├── frontend/ # Unity-based client
+├── frontend[client]/ # Unity-based client
 │   └── Assets/
 │       └── Scripts/ # Game logic, including Player, Weapon, Enemy, BT, ML-Agent
-├── backend/ # Node.js-based API server
-│   ├── controllers/
-│   ├── models/ (Player.js, Match.js, Score.js, etc.)
-│   ├── routes/
-│   └── app.js
+│
+└── backend[server]/ # Node.js-based API server
+    ├── controllers/
+    ├── models/ (Player.js, Match.js, Score.js, etc.)
+    ├── routes/
+    └── app.js
 ```
 
 ---
@@ -102,7 +103,7 @@ feature/~~~ → Feature Development
 ## 📦 Release Information
 Initial Beta Release Completed
 
-🔗 [v0.2-beta Release](https://github.com/m97j/FpsGame/releases/tag/v0.2-beta)
+🔗 [v0.1-beta Release](https://github.com/m97j/FpsGame/releases/tag/v0.1-beta)
 
 ---
 
